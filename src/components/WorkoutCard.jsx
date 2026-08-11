@@ -23,7 +23,9 @@ export default function WorkoutCard({ w, sets, reps }) {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 6, flexWrap: "wrap" }}>
           <MuscleBadge muscle={w.muscle} />
-          <span style={{ fontSize: 12, color: "#5E6E88" }}>{w.equipment}</span>
+          <span style={{ fontSize: 12, color: "#5E6E88" }}>
+            {w.targetMuscle ? `${w.targetMuscle} / ${w.equipment}` : w.equipment}
+          </span>
         </div>
         {(sets || reps) && (
           <div style={{ marginTop: 8, fontSize: 13, color: "#B8C4D9", fontWeight: 600 }}>
