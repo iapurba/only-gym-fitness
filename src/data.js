@@ -124,8 +124,8 @@ export const PEOPLE = [
     color: "#4A91EB",
     plan: {
       Mon: { focus: "Pull Day", items: [item("pullups", 3, "Failure"), item("lat_pulldown", 4, "8-10"), item("one_arm_db_row", 3, "12"), item("chest_supported_db_row", 3, "10-12"), item("deadlift", 2, "10-12"), item("barbell_curl", 3, "8-10")] },
-      Tue: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("upper_cable_fly", 2, "12"), item("cable_fly", 3, "12"), item("dips", 2, "Failure"), item("tricep_pushdown", 3, "12"), item("wrist_curl", 2, "12-16"), item("reverse_wrist_curl", 2, "12-16")] },
-      Wed: { focus: "Leg Day", items: [item("hack_squat", 3, "12"), item("rdl", 3, "12"), item("leg_press", 2, "12"), item("lying_leg_curl", 2, "8-10"), item("leg_extension", 2, "8-10"), item("calf_raise", 3, "15")] },
+      Tue: { focus: "Leg Day", items: [item("hack_squat", 3, "12"), item("rdl", 3, "12"), item("leg_press", 2, "12"), item("lying_leg_curl", 2, "8-10"), item("leg_extension", 2, "8-10"), item("calf_raise", 3, "15")] },
+      Wed: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("upper_cable_fly", 2, "12"), item("cable_fly", 3, "12"), item("dips", 2, "Failure"), item("tricep_pushdown", 3, "12"), item("wrist_curl", 2, "12-16"), item("reverse_wrist_curl", 2, "12-16")] },
       Thu: { focus: "Rest", items: [] },
       Fri: { focus: "Shoulder & Core", items: [item("incline_db_press", 3, "12"), item("db_shoulder_press", 3, "12"), item("lateral_raise", 4, "12-16"), item("rear_delt_fly", 4, "12-16"), item("shrugs", 3, "12"), item("lying_leg_raise", 2, "15"), item("crunches", 2, "15"), item("bicycle_crunches", 2, "15")] },
       Sat: { focus: "Arm Day", items: [item("incline_bicep_curl", 3, "10-12"), item("preacher_curl", 3, "12"), item("hammer_curl", 3, "10-12"), item("cgbp", 3, "10-12"), item("triceps_ohp", 3, "10-12"), item("tricep_kickback", 3, "10-12")] },
@@ -185,8 +185,8 @@ export const PEOPLE = [
     plan: {
       Mon: { focus: "Pull Day", items: [item("lat_pulldown", 3, "12"), item("seated_row", 3, "12"), item("one_arm_db_row", 2, "12"), item("rear_delt_fly", 3, "12"), item("preacher_curl", 3, "12"), item("plank", 3, "60s"), item("russian_twist", 2, "15"), item("incline_walk", 1, "10 min")] },
       Tue: { focus: "Leg Day", items: [item("warm_up_legs", 1, "Warmup"), item("squat", 3, "12"), item("leg_press", 2, "12"), item("leg_extension", 2, "12"), item("lying_leg_curl", 2, "12"), item("calf_raise", 3, "15"), item("stretching", 2, "12")] },
-      Wed: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("pec_dec_fly", 3, "12"), item("db_shoulder_press", 2, "12"), item("lateral_raise", 3, "12"), item("triceps_ohp", 3, "12"), item("crunches", 2, "12"), item("lying_leg_raise", 3, "12"), item("incline_walk", 1, "10 min")] },
-      Thu: { focus: "Rest", items: [] },
+      Wed: { focus: "Rest", items: [] },
+      Thu: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("pec_dec_fly", 3, "12"), item("db_shoulder_press", 2, "12"), item("lateral_raise", 3, "12"), item("triceps_ohp", 3, "12"), item("crunches", 2, "12"), item("lying_leg_raise", 3, "12"), item("incline_walk", 1, "10 min")] },
       Fri: { focus: "Lower Stability", items: [item("warm_up_stability", 1, "Warmup"), item("hip_thrust", 3, "12"), item("sumo_squat", 3, "12"), item("kneeling_squat", 3, "12"), item("side_plank", 2, "45s/side"), item("kettlebell_swing", 3, "15")] },
       Sat: { focus: "Arms & Cardio", items: [item("alternate_db_curl", 3, "12"), item("barbell_curl", 2, "12"), item("bench_dips", 2, "12"), item("tricep_pushdown", 3, "12"), item("incline_walk", 1, "15 min")] },
       Sun: { focus: "Rest", items: [] },
@@ -200,8 +200,8 @@ export const PEOPLE = [
     plan: {
       Mon: { focus: "Pull Day", items: [item("lat_pulldown", 3, "12"), item("seated_row", 3, "12"), item("one_arm_db_row", 2, "12"), item("rear_delt_fly", 3, "12"), item("preacher_curl", 3, "12"), item("plank", 3, "60s"), item("russian_twist", 2, "15"), item("incline_walk", 1, "10 min")] },
       Tue: { focus: "Leg Day", items: [item("warm_up_legs", 1, "Warmup"), item("squat", 3, "12"), item("leg_press", 2, "12"), item("leg_extension", 2, "12"), item("lying_leg_curl", 2, "12"), item("calf_raise", 3, "15"), item("stretching", 2, "12")] },
-      Wed: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("pec_dec_fly", 3, "12"), item("db_shoulder_press", 2, "12"), item("lateral_raise", 3, "12"), item("triceps_ohp", 3, "12"), item("crunches", 2, "12"), item("lying_leg_raise", 3, "12"), item("incline_walk", 1, "10 min")] },
-      Thu: { focus: "Rest", items: [] },
+      Wed: { focus: "Rest", items: [] },
+      Thu: { focus: "Push Day", items: [item("bench_press", 3, "12"), item("pec_dec_fly", 3, "12"), item("db_shoulder_press", 2, "12"), item("lateral_raise", 3, "12"), item("triceps_ohp", 3, "12"), item("crunches", 2, "12"), item("lying_leg_raise", 3, "12"), item("incline_walk", 1, "10 min")] },
       Fri: { focus: "Lower Stability", items: [item("warm_up_stability", 1, "Warmup"), item("hip_thrust", 3, "12"), item("sumo_squat", 3, "12"), item("kneeling_squat", 3, "12"), item("side_plank", 2, "45s/side"), item("kettlebell_swing", 3, "15")] },
       Sat: { focus: "Arms & Cardio", items: [item("alternate_db_curl", 3, "12"), item("barbell_curl", 2, "12"), item("bench_dips", 2, "12"), item("tricep_pushdown", 3, "12"), item("incline_walk", 1, "15 min")] },
       Sun: { focus: "Rest", items: [] },
