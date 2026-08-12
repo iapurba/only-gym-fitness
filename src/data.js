@@ -153,9 +153,9 @@ export const PEOPLE = [
     goal: "Body Recomposition",
     color: "#4DD9E8",
     plan: {
-      Mon: { focus: "Push Day", items: [item("bench_press", 3, "8-10"), item("pec_dec_fly", 3, "8-10"), item("arnold_press", 2, "10-12"), item("lateral_raise", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
+      Mon: { focus: "Push Day", items: [item("bench_press", 3, "8-10"), item("pec_dec_fly", 3, "8-10"), item("db_shoulder_press", 2, "10-12"), item("lateral_raise", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
       Tue: { focus: "Rest", items: [] },
-      Wed: { focus: "Leg Day", items: [item("squat", 3, "8-10"), item("stretching", 2, "10-12"), item("seated_leg_curl", 3, "10-12"), item("lying_leg_curl", 3, "10-12"), item("leg_press", 2, "8-10"), item("calf_raise", 3, "10-12")] },
+      Wed: { focus: "Leg Day", items: [item("squat", 3, "8-10"), item("leg_press", 2, "8-10"), item("seated_leg_curl", 3, "10-12"), item("lying_leg_curl", 3, "10-12"), item("calf_raise", 3, "10-12"), item("stretching", 2, "10-12")] },
       Thu: { focus: "Rest", items: [] },
       Fri: { focus: "Pull Day", items: [item("lat_pulldown", 3, "8-10"), item("seated_row", 3, "8-10"), item("one_arm_db_row", 2, "8-10"), item("rear_delt_fly", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
       Sat: { focus: "Arms & Mobility", items: [item("preacher_curl", 3, "10-12"), item("alternate_db_curl", 2, "10-12"), item("triceps_ohp", 3, "10-12"), item("bench_dips", 2, "10-12"), item("bodyweight_squats", 3, "8-10"), item("underknee_taps", 2, "10-12"), item("cycling", 1, "10-15 min"), item("sliding_walk", 1, "10 min"), item("incline_walk", 1, "10 min")] },
@@ -168,7 +168,7 @@ export const PEOPLE = [
     goal: "Overall Weight Loss",
     color: "#34C87A",
     plan: {
-      Mon: { focus: "Push Day", items: [item("bench_press", 3, "8-10"), item("pec_dec_fly", 3, "8-10"), item("arnold_press", 2, "10-12"), item("lateral_raise", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
+      Mon: { focus: "Push Day", items: [item("bench_press", 3, "8-10"), item("pec_dec_fly", 3, "8-10"), item("db_shoulder_press", 2, "10-12"), item("lateral_raise", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
       Tue: { focus: "Leg Day", items: [item("squat", 3, "8-10"), item("leg_press", 2, "8-10"), item("seated_leg_curl", 3, "10-12"), item("lying_leg_curl", 3, "10-12"), item("calf_raise", 3, "10-12"), item("stretching", 2, "10-12")] },
       Wed: { focus: "Rest", items: [] },
       Thu: { focus: "Pull Day", items: [item("lat_pulldown", 3, "8-10"), item("seated_row", 3, "8-10"), item("one_arm_db_row", 2, "8-10"), item("rear_delt_fly", 3, "10-12"), item("crunches", 2, "10-12"), item("lying_leg_raise", 2, "10-12"), item("jumping_jacks", 2, "10-12"), item("incline_walk", 1, "10 min")] },
