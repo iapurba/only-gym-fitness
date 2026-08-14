@@ -7,7 +7,7 @@ export default function WorkoutsPage() {
   const [muscleFilter, setMuscleFilter] = useState("All");
 
   const filtered = useMemo(() => {
-    return WORKOUTS.filter((w) => {
+    const results = WORKOUTS.filter((w) => {
       const matchesQuery =
         query.trim() === "" ||
         w.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -15,6 +15,7 @@ export default function WorkoutsPage() {
       const matchesMuscle = muscleFilter === "All" || w.muscle === muscleFilter;
       return matchesQuery && matchesMuscle;
     });
+    return results.sort((a, b) => a.name.localeCompare(b.name));
   }, [query, muscleFilter]);
 
   return (
@@ -50,7 +51,7 @@ export default function WorkoutsPage() {
       </div>
 
       <div style={{ display: "flex", gap: 8, overflowX: "auto", paddingBottom: 4, marginBottom: 14 }}>
-        {["All", ...Object.keys(MUSCLES)].map((m) => {
+        {["All", ...Object.keys(MUSCLES).sort()].map((m) => {
           const active = muscleFilter === m;
           const color = MUSCLES[m] || "#4A91EB";
           return (
