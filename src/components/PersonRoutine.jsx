@@ -3,7 +3,11 @@ import { DAYS } from '../data';
 import WorkoutCard from './WorkoutCard';
 
 export default function PersonRoutine({ person, onBack }) {
-  const [day, setDay] = useState(DAYS[0]);
+  const [day, setDay] = useState(() => {
+    const todayIndex = new Date().getDay();
+    const adjustedIndex = todayIndex === 0 ? 6 : todayIndex - 1;
+    return DAYS[adjustedIndex] || DAYS[0];
+  });
   const dayPlan = person.plan[day];
   const isRest = dayPlan.items.length === 0;
 
