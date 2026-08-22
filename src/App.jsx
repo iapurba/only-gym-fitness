@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PEOPLE } from './data';
 import WorkoutsPage from './components/WorkoutsPage';
 import TeamPage from './components/TeamPage';
@@ -32,9 +32,50 @@ function Header() {
   );
 }
 
+function ProfileSelector({ onSelect }) {
+  return (
+    <div style={{
+      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+      background: 'rgba(7, 16, 28, 0.95)', zIndex: 100,
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 20
+    }}>
+      <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800, fontSize: 32, color: "#EAF0FB", marginBottom: 20, textAlign: "center" }}>
+        Select Your Profile
+      </div>
+      <div style={{ width: '100%', maxWidth: 360, display: "flex", flexDirection: "column", gap: 10, maxHeight: "70vh", overflowY: "auto" }}>
+        {PEOPLE.map(p => (
+           <button key={p.id} onClick={() => onSelect(p.id)} style={{
+             display: "flex", alignItems: "center", gap: 14, textAlign: "left", cursor: "pointer",
+             background: "#0D1826", border: "1px solid #16273B", borderRadius: 14, padding: "13px 14px",
+           }}>
+             <div style={{
+                width: 46, height: 46, borderRadius: "50%", flexShrink: 0,
+                background: `${p.color}22`, border: `1.5px solid ${p.color}`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 16, color: p.color,
+             }}>
+               {p.name.slice(0, 2).toUpperCase()}
+             </div>
+             <div style={{ flex: 1, minWidth: 0 }}>
+               <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 18, color: "#EAF0FB" }}>{p.name}</div>
+               <div style={{ fontSize: 12, color: p.color, fontWeight: 600, marginTop: 1 }}>{p.goal}</div>
+             </div>
+           </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [tab, setTab] = useState("workouts"); // 'workouts' | 'team' | 'rules'
   const [personId, setPersonId] = useState(null);
+  const [myProfileId, setMyProfileId] = useState(() => localStorage.getItem("myProfileId"));
+
+  const handleSelectProfile = (id) => {
+    localStorage.setItem("myProfileId", id);
+    setMyProfileId(id);
+  };
 
   const person = PEOPLE.find((p) => p.id === personId);
 
@@ -53,11 +94,13 @@ export default function App() {
         button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid #4A91EB; outline-offset: 2px; }
       `}</style>
 
+      {!myProfileId && <ProfileSelector onSelect={handleSelectProfile} />}
+
       <Header />
 
       <div style={{ paddingTop: 60 }}>
         {tab === "workouts" && <WorkoutsPage />}
-        {tab === "team" && !person && <TeamPage onSelect={setPersonId} />}
+        {tab === "team" && !person && <TeamPage onSelect={setPersonId} myProfileId={myProfileId} />}
         {tab === "team" && person && <PersonRoutine person={person} onBack={() => setPersonId(null)} />}
         {tab === "rules" && <RulesPage />}
       </div>

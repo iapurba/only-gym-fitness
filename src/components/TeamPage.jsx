@@ -1,7 +1,13 @@
 import React from 'react';
 import { PEOPLE, DAYS } from '../data';
 
-export default function TeamPage({ onSelect }) {
+export default function TeamPage({ onSelect, myProfileId }) {
+  const sortedPeople = [...PEOPLE].sort((a, b) => {
+    if (a.id === myProfileId) return -1;
+    if (b.id === myProfileId) return 1;
+    return 0;
+  });
+
   return (
     <div style={{ padding: "16px 16px 90px" }}>
       <div style={{ marginBottom: 16 }}>
@@ -9,15 +15,16 @@ export default function TeamPage({ onSelect }) {
         <div style={{ fontSize: 13, color: "#5E6E88", marginTop: 2 }}>{PEOPLE.length} members, {PEOPLE.length} routines</div>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-        {PEOPLE.map((p) => {
+        {sortedPeople.map((p) => {
           const daysActive = DAYS.filter((d) => p.plan[d].items.length > 0).length;
+          const isMe = p.id === myProfileId;
           return (
             <button
               key={p.id}
               onClick={() => onSelect(p.id)}
               style={{
                 display: "flex", alignItems: "center", gap: 14, textAlign: "left", cursor: "pointer",
-                background: "#0D1826", border: "1px solid #16273B", borderRadius: 14, padding: "13px 14px",
+                background: "#0D1826", border: isMe ? `1px solid ${p.color}` : "1px solid #16273B", borderRadius: 14, padding: "13px 14px",
               }}
             >
               <div
@@ -31,7 +38,9 @@ export default function TeamPage({ onSelect }) {
                 {p.name.slice(0, 2).toUpperCase()}
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 18, color: "#EAF0FB" }}>{p.name}</div>
+                <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, fontSize: 18, color: "#EAF0FB" }}>
+                  {p.name} {isMe && <span style={{ color: "#5E6E88", fontSize: 14, fontWeight: 600 }}>(You)</span>}
+                </div>
                 <div style={{ fontSize: 12, color: p.color, fontWeight: 600, marginTop: 1 }}>{p.goal}</div>
               </div>
               <div style={{ fontSize: 11, color: "#5E6E88", fontWeight: 600, flexShrink: 0 }}>{daysActive}d/wk</div>
